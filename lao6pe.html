@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载 lao6-PE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft Sans Serif', Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #005EBB; /* XP默认桌面背景色 */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* XP窗口样式 */
+        .xp-window {
+            width: 90%;
+            max-width: 800px;
+            background-color: #C0C0C0; /* XP窗口背景色 */
+            border: 2px solid;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF; /* XP窗口3D边框 */
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 0; /* XP窗口无圆角 */
+            overflow: hidden;
+        }
+
+        /* XP标题栏样式 */
+        .xp-titlebar {
+            background: linear-gradient(to right, #000080, #1084D0); /* XP标题栏渐变 */
+            color: white;
+            padding: 6px 10px;
+            display: flex;
+            justify-content: space-between; /* 标题和关闭按钮分开 */
+            align-items: center;
+            cursor: default;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* XP关闭按钮（放大版） */
+        .xp-close-btn {
+            background-color: #C0C0C0;
+            border: 2px solid;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF;
+            padding: 4px 12px;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            line-height: 1;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .xp-close-btn:hover {
+            background-color: #E0E0E0;
+        }
+
+        .xp-close-btn:active {
+            border-color: #808080 #FFFFFF #FFFFFF #808080;
+            padding: 5px 11px 3px 13px;
+        }
+
+        /* 窗口内容区域 */
+        .xp-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* 调整间距，适配放大后的标题 */
+        }
+
+        /* 图片展示 */
+        .xp-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid;
+            border-color: #808080 #FFFFFF #FFFFFF #808080; /* XP图片边框 */
+            background-color: white;
+            padding: 3px;
+        }
+
+        /* 图片下方标题（放大2倍） */
+        .image-title {
+            color: black;
+            font-size: 32px; /* 原16px → 放大2倍为32px */
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 轻微阴影增加立体感 */
+        }
+
+        /* XP风格按钮 */
+        .xp-btn {
+            background-color: #C0C0C0;
+            border: 2px solid;
+            border-color: #FFFFFF #808080 #808080 #FFFFFF; /* XP 3D边框 */
+            color: black; /* 黑色文字 */
+            padding: 10px 30px; /* 适当放大按钮，与标题协调 */
+            font-size: 16px; /* 按钮文字也略微放大 */
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+            min-width: 220px; /* 增大最小宽度 */
+        }
+
+        .xp-btn:hover {
+            background-color: #E0E0E0;
+        }
+
+        .xp-btn:active {
+            border-color: #808080 #FFFFFF #FFFFFF #808080; /* 按下时边框反转 */
+            padding: 11px 29px 9px 31px; /* 调整按下时的位移 */
+            box-shadow: none;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .xp-content {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .image-title {
+                font-size: 28px; /* 平板端略微缩小，保持2倍原大小的视觉比例 */
+            }
+
+            .xp-btn {
+                padding: 8px 25px;
+                font-size: 14px;
+                min-width: 180px;
+            }
+
+            .xp-close-btn {
+                padding: 3px 10px;
+                font-size: 16px;
+                min-width: 36px;
+            }
+
+            .xp-close-btn:active {
+                padding: 4px 9px 2px 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-title {
+                font-size: 24px; /* 手机端进一步调整，确保不溢出 */
+                padding: 0 10px;
+            }
+
+            .xp-btn {
+                padding: 7px 20px;
+                font-size: 13px;
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- XP风格窗口 -->
+    <div class="xp-window">
+        <!-- XP标题栏（包含标题文字和关闭按钮） -->
+        <div class="xp-titlebar">
+            <span>下载</span> <!-- 标题栏文字 -->
+            <button class="xp-close-btn" onclick="window.location.href='你的关闭按钮链接'">×</button>
+        </div>
+        
+        <!-- 窗口内容 -->
+        <div class="xp-content">
+            <!-- 图片展示（与HTML同目录的lao6pe.jpg） -->
+            <img src="lao6pe.jpg" alt="lao6pe" class="xp-image" onerror="this.src='https://via.placeholder.com/800x450?text=图片加载失败'">
+            
+            <!-- 图片下方黑色文字标题（放大2倍） -->
+            <div class="image-title">lao6-PE | 更小更快可玩性更高</div>
+            
+            <!-- XP风格按钮 -->
+            <button class="xp-btn" onclick="window.location.href='https://www.123865.com/s/AH3rVv-I2ARh?pwd=H28G'">前往123网盘下载</button>
+        </div>
+    </div>
+
+    <script>
+        // XP窗口拖动功能
+        const xpWindow = document.querySelector('.xp-window');
+        const titlebar = document.querySelector('.xp-titlebar');
+        let isDragging = false;
+        let startX, startY, windowX, windowY;
+
+        titlebar.addEventListener('mousedown', (e) => {
+            // 只有点击标题文字区域才允许拖动，点击关闭按钮不触发
+            if (e.target !== document.querySelector('.xp-close-btn')) {
+                isDragging = true;
+                const rect = xpWindow.getBoundingClientRect();
+                windowX = rect.left;
+                windowY = rect.top;
+                startX = e.clientX;
+                startY = e.clientY;
+                titlebar.style.cursor = 'move';
+            }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            xpWindow.style.position = 'absolute';
+            xpWindow.style.left = `${windowX + dx}px`;
+            xpWindow.style.top = `${windowY + dy}px`;
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            titlebar.style.cursor = 'default';
+        });
+    </script>
+</body>
+</html>
