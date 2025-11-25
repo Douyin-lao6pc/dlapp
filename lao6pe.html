@@ -90,14 +90,36 @@
             padding: 3px;
         }
 
-        /* 图片下方标题（放大2倍） */
+        /* 标题区域样式 */
+        .title-container {
+            text-align: center;
+        }
+
+        /* 图片下方黑色文字标题（放大2倍） */
         .image-title {
             color: black;
             font-size: 32px; /* 原16px → 放大2倍为32px */
             font-weight: bold;
-            text-align: center;
             margin-top: 10px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 轻微阴影增加立体感 */
+        }
+
+        /* 副标题样式 */
+        .image-subtitle {
+            color: black;
+            font-size: 18px; /* 小于主标题 */
+            margin-top: 5px;
+            font-weight: normal;
+        }
+
+        /* 按钮容器 */
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap; /* 小屏幕自动换行 */
+            width: 100%;
+            margin-top: 10px;
         }
 
         /* XP风格按钮 */
@@ -106,13 +128,13 @@
             border: 2px solid;
             border-color: #FFFFFF #808080 #808080 #FFFFFF; /* XP 3D边框 */
             color: black; /* 黑色文字 */
-            padding: 10px 30px; /* 适当放大按钮，与标题协调 */
+            padding: 10px 20px; /* 适当放大按钮，与标题协调 */
             font-size: 16px; /* 按钮文字也略微放大 */
             font-weight: bold;
             cursor: pointer;
             transition: all 0.1s ease;
             box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-            min-width: 220px; /* 增大最小宽度 */
+            min-width: 180px; /* 按钮最小宽度 */
         }
 
         .xp-btn:hover {
@@ -121,7 +143,7 @@
 
         .xp-btn:active {
             border-color: #808080 #FFFFFF #FFFFFF #808080; /* 按下时边框反转 */
-            padding: 11px 29px 9px 31px; /* 调整按下时的位移 */
+            padding: 11px 19px 9px 21px; /* 调整按下时的位移 */
             box-shadow: none;
         }
 
@@ -136,10 +158,14 @@
                 font-size: 28px; /* 平板端略微缩小，保持2倍原大小的视觉比例 */
             }
 
+            .image-subtitle {
+                font-size: 16px;
+            }
+
             .xp-btn {
-                padding: 8px 25px;
+                padding: 8px 15px;
                 font-size: 14px;
-                min-width: 180px;
+                min-width: 150px;
             }
 
             .xp-close-btn {
@@ -159,11 +185,20 @@
                 padding: 0 10px;
             }
 
+            .image-subtitle {
+                font-size: 14px;
+                padding: 0 10px;
+            }
+
             .xp-btn {
-                padding: 7px 20px;
+                padding: 7px 10px;
                 font-size: 13px;
                 width: 100%;
                 min-width: auto;
+            }
+
+            .button-container {
+                gap: 10px;
             }
         }
     </style>
@@ -173,7 +208,7 @@
     <div class="xp-window">
         <!-- XP标题栏（包含标题文字和关闭按钮） -->
         <div class="xp-titlebar">
-            <span>下载</span> <!-- 标题栏文字 -->
+            <span>下载 lao6-PE</span> <!-- 标题栏文字 -->
             <button class="xp-close-btn" onclick="window.location.href='https://douyin-lao6pc.github.io/guanwang/dlapp.html'">×</button>
         </div>
         
@@ -182,11 +217,23 @@
             <!-- 图片展示（与HTML同目录的lao6pe.jpg） -->
             <img src="lao6pe.jpg" alt="lao6pe" class="xp-image" onerror="this.src='https://via.placeholder.com/800x450?text=图片加载失败'">
             
-            <!-- 图片下方黑色文字标题（放大2倍） -->
-            <div class="image-title">lao6-PE | 更小更快可玩性更高</div>
+            <!-- 标题区域（包含主标题和副标题） -->
+            <div class="title-container">
+                <div class="image-title">lao6-PE | 更小更快可玩性更高</div>
+                <div class="image-subtitle">最新版本：Ver 1.1 - 2025/11/14更新</div>
+            </div>
             
-            <!-- XP风格按钮 -->
-            <button class="xp-btn" onclick="window.location.href='https://www.123865.com/s/AH3rVv-I2ARh?pwd=H28G'">前往123网盘下载</button>
+            <!-- 按钮容器 -->
+            <div class="button-container">
+                <!-- 第一个按钮：原下载按钮 -->
+                <button class="xp-btn" onclick="window.location.href='https://www.123865.com/s/AH3rVv-I2ARh?pwd=H28G'">前往123网盘下载</button>
+                
+                <!-- 第二个按钮：更新日志 -->
+                <button class="xp-btn" onclick="window.location.href='https://docs.qq.com/doc/DVW5uRHdOUkFHd3Z6'">更新日志</button>
+                
+                <!-- 第三个按钮：怎么写入U盘 -->
+                <button class="xp-btn" onclick="window.location.href='https://docs.qq.com/doc/DVWtwV0hjQkRLYVFh'">怎么写入U盘</button>
+            </div>
         </div>
     </div>
 
