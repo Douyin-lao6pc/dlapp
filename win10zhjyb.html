@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows10 智慧教育版 | 官方下载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft Yahei", sans-serif;
+            background-color: #080c18;
+            color: #e2e8f5;
+            line-height: 1.7;
+        }
+
+        /* 漂移入场动画 */
+        .fade-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease-out;
+        }
+
+            .fade-item.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 70px 25px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            border-bottom: 1px solid #1a233b;
+            padding-bottom: 40px;
+        }
+
+            header h1 {
+                font-size: 44px;
+                color: #ffffff;
+                margin-bottom: 12px;
+                letter-spacing: 2px;
+            }
+
+                header h1 span {
+                    background: linear-gradient(90deg, #4299ff, #36c9ff);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+
+            header p {
+                font-size: 17px;
+                color: #8fa3c7;
+            }
+
+        .download {
+            margin-top: 30px;
+        }
+
+            .download a {
+                display: inline-block;
+                padding: 13px 45px;
+                background: #2563eb;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 6px;
+                font-size: 17px;
+                transition: 0.3s;
+            }
+
+                .download a:hover {
+                    background: #1d4ed8;
+                }
+
+        /* 特性卡片 */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: #10182b;
+            border: 1px solid #1e2b48;
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+            .card:hover {
+                border-color: #3b82f6;
+            }
+
+            .card h3 {
+                color: #c5d8f8;
+                margin-bottom: 12px;
+                font-size: 20px;
+            }
+
+            .card p {
+                color: #8fa3c7;
+                font-size: 15px;
+            }
+
+        /* 信息区块 */
+        .info {
+            background: #10182b;
+            border: 1px solid #1e2b48;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+        }
+
+            .info h3 {
+                color: #c5d8f8;
+                margin-bottom: 15px;
+                font-size: 21px;
+            }
+
+            .info p {
+                color: #8fa3c7;
+            }
+
+        footer {
+            text-align: center;
+            color: #64749b;
+            font-size: 14px;
+            padding-top: 20px;
+            border-top: 1px solid #1a233b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="fade-item">
+            <h1>Windows10 <span>智慧教育版</span></h1>
+            <p>为教室一体机而定制的Windows系统</p>
+            <div class="download fade-item">
+                <a href="https://1812019632.share.123865.com/123pan/AH3rVv-ui7rh?pwd=UuNb#">下载镜像文件</a>
+            </div>
+        </header>
+
+        <div class="cards">
+            <div class="card fade-item">
+                <h3>系统保持干净</h3>
+                <p>系统组件禁止杀毒软件安装，系统纯净安全无篡改。</p>
+            </div>
+            <div class="card fade-item">
+                <h3>极致精简优化</h3>
+                <p>精减系统冗余，不封装多余软件。</p>
+            </div>
+            <div class="card fade-item">
+                <h3>永久免费</h3>
+                <p>不做收费的系统</p>
+            </div>
+            <div class="card fade-item">
+                <h3>系统深度定制</h3>
+                <p>强制反编译修改系统属性、版本信息，做到深度定制。</p>
+            </div>
+        </div>
+
+        <div class="info fade-item">
+            <h3>系统版本信息</h3>
+            <p>
+                版本：基于 Microsoft Windows10 19045.6646 专业版 定制<br>
+                制作：lao6 OS 开发团队 & Longs Studio<br>
+                激活：KMS激活，自带激活工具<br>
+                用途：班级一体机使用，适合教育环境，系统流畅，系统稳定
+            </p>
+        </div>
+
+        <footer class="fade-item">
+            © 2026 lao6 OS 开发团队 | © 2026 Longs Studio 系统开发
+        </footer>
+    </div>
+
+    <script>
+        // 平滑依次漂移入场
+        window.onload = function () {
+            let list = document.querySelectorAll('.fade-item');
+            list.forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('show');
+                }, index * 130);
+            });
+        }
+    </script>
+</body>
+</html>
